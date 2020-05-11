@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Starting with gst-build"
+date: 2020-05-11
+---
+
 ## How to add a new log in GStreamer using gst-build
 
 
