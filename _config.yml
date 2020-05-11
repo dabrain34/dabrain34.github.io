@@ -1,15 +1,11 @@
-title: Stéphane Cerveau
-description: Senior Software Engineer - Consultant @ Collabora
-theme: jekyll-theme-slate
+remote_theme: thelehhman/texture
 
-#theme: texture
+texture:
+  title: Stéphane Cerveau
+  tagline: Senior Software Engineer - Consultant @ Collabora
+  date_format: "%b %-d, %Y"
 
-#texture:
-#  title: Stéphane Cerveau
-#  tagline: Senior Software Engineer - Consultant @ Collabora
-#  date_format: "%b %-d, %Y"
-
-#  social_links:
-#    github:  dabrain34
-#    linkedIn: in/stephane-cerveau-8a53ab2/
-#  style: blue
+  social_links:
+    github:  dabrain34
+    linkedIn: in/stephane-cerveau-8a53ab2/
+  style: blue
