@@ -10,3 +10,6 @@ texture:
     linkedIn: in/stephane-cerveau-8a53ab2/
   style: blue
   showNav: true
+
+plugins:
+  - jekyll-seo-tag

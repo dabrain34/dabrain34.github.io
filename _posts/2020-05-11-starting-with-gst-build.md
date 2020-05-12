@@ -2,6 +2,7 @@
 layout: post
 title: "Starting with gst-build"
 date: 2020-05-11
+canonical_url: "https://www.collabora.com/news-and-blog/blog/2020/03/19/getting-started-with-gstreamer-gst-build/"
 ---
 
 ## How to add a new log in GStreamer using gst-build
