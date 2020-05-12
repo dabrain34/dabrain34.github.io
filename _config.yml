@@ -1,5 +1,5 @@
-remote_theme: thelehhman/texture
-
+#remote_theme: thelehhman/texture
+theme: texture
 texture:
   title: Stéphane Cerveau's weblog
   tagline: Free Software Enthousiast - Consultant @ Collabora
