@@ -1,6 +1,12 @@
-## My cross compiling journey with gst-build and GStreamer
+---
+layout: post
+title: "Cross-compiling with gst-build"
+date: 2020-05-18
+canonical_url: "https://www.collabora.com/news-and-blog/blog/2020/05/15/cross-compiling-with-gst-build-and-gstreamer/"
+---
 
-### A brief Introduction
+
+## Cross-compiling with gst-build
 
 [gst-build](https://gitlab.freedesktop.org/gstreamer/gst-build/) is one of the two build system used by the community to hack into the whole GStreamer solution.
 A previous [blogpost](https://www.collabora.com/news-and-blog/) has been released to present gst-build and how to get started with it.
@@ -42,9 +48,9 @@ cpu = 'arm64'
 endian = 'little'
 
 [properties]
-c_args = ['-Wall', '-g', '-O2']
-cpp_args = ['-Wall', '-g', '-O2']
-objc_args = ['-Wall', '-g', '-O2']
+c_args = []
+cpp_args = []
+objc_args = []
 objcpp_args = []
 c_link_args = []
 cpp_link_args = []
@@ -62,8 +68,8 @@ strip = ['aarch64-linux-gnu-strip']
 
 ```
 
-Here meson will use aarch64-linux-gnu-gxx to compile with the given arguments setup above. As meson does not recommend to use environment variables, the cross file contains hard-coded path to the sysroot to provide package config.
-Indeed since meson > 0.54, you can define `pkg_config_libdir` which will help pkg-config to search for the package configuration files for the given target. You can also tell the path to the pkg-config wrapper by modifying the pkgconfig variables as well.
+Here Meson will use aarch64-linux-gnu-gxx to compile with the given arguments setup above. As Meson does not recommend to use environment variables, the cross file contains hard-coded path to the sysroot to provide package config.
+Indeed since Meson > 0.54, you can define `pkg_config_libdir` which will help pkg-config to search for the package configuration files for the given target. You can also tell the path to the pkg-config wrapper by modifying the pkgconfig variables as well.
 Predefined cross file can also be found in `gst-build/data/cross-files`
 
 
@@ -71,7 +77,9 @@ Predefined cross file can also be found in `gst-build/data/cross-files`
 
 When the cross file ready, we can now configure gst-build in order to have a dedicated build for our platform. Here I'm disabling some unnecessary options of gst-build such as libav, vaapi or gtk_doc.
 
-Please ensure that you have the last meson version [necessary patch](https://github.com/mesonbuild/meson/pull/6461), otherwise gst-build will take glib from the system (pkg_config_libdir prerequisite). Notice that on this platform, we use gst-omx, so we also give some options specific to this platform, in particular the path to the OpenMAX headers from Xilinx.
+**⚠ Note: Make sure that you are running Meson 0.54.1 which has the necessary patch for complete support of cross-compilation, otherwise gst-build will take glib from the system (pkg_config_libdir prerequisite).**
+
+Notice that on this platform, we use gst-omx, so we also give some options specific to this platform, in particular the path to the OpenMAX headers from Xilinx.**
 
 ```
 $ /path/to/meson_0_54 build-cross-arm64 --cross-file=my-meson-cross-file.txt -D omx=enabled -D sharp=disabled -D gst-omx:header_path=/opt/allegro-vcu-omx-il/omx_header -D gst-omx:target=zynqultrascaleplus -D libav=disabled -D rtsp_server=disabled -D vaapi=disabled -D disable_gst_omx=false -Dugly=disabled -Dgtk_doc=disabled -Dglib:libmount=false
@@ -131,7 +139,7 @@ You can now generate a new cross file with the given root file-system as paramet
 $ ./generate-cross-file.py --sysroot /opt/cerbero/build/dist/linux_arm64/ --no-include-sysroot
 ```
 
-Here I define a *sysroot* to be be used but I'm disabling the use of `sys_root` in the cross file to avoid meson to tell pkg-config to prefix every path with this value. cerbero is generating pkg-config files with the sysroot path already in each pc files.
+Here I define a *sysroot* to be be used but I'm disabling the use of `sys_root` in the cross file to avoid Meson to tell pkg-config to prefix every path with this value. cerbero is generating pkg-config files with the sysroot path already in each pc files.
 
 ```
 [host_machine]
@@ -141,9 +149,9 @@ cpu = 'arm64'
 endian = 'little'
 
 [properties]
-c_args = ['-Wall', '-g', '-O2']
-cpp_args = ['-Wall', '-g', '-O2']
-objc_args = ['-Wall', '-g', '-O2']
+c_args = []
+cpp_args = []
+objc_args = []
 objcpp_args = []
 c_link_args = ['-L/opt/cerbero/build/dist/linux_arm64', '-Wl,-rpath-link=/opt/cerbero/build/dist/linux_arm64']
 cpp_link_args = ['-L/opt/cerbero/build/dist/linux_arm64', '-Wl,-rpath-link=/opt/cerbero/build/dist/linux_arm64']
