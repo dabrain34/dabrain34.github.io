@@ -21,7 +21,7 @@ In this post, I will target an **aarch64** CPU for the [Xilinx](https://www.xili
 
 * Toolchain (aarch64-linux-gnu-gcc) + sysroot (optional)
 * Meson cross file
-* Meson > 0.54 (which is not available at the time of writing this blog post but the [merged bugfix patch](https://github.com/mesonbuild/meson/pull/6461) in the official repository)
+* Meson > 0.54
 
 First we'll need here to have a proper toolchain to cross-build. In my case I used the regular toolchain provided by Ubuntu installing the packages:
 
