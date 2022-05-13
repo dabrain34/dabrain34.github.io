@@ -1,14 +1,21 @@
 ---
 layout: post
-title: "Starting with gst-build"
+title: "Starting with gstreamer build"
 date: 2020-05-11
 canonical_url: "https://www.collabora.com/news-and-blog/blog/2020/03/19/getting-started-with-gstreamer-gst-build/"
 ---
+
+
+> **UPDATE**: gst-build is now at the root of the main GStreamer git repository
+In September 2021, the GStreamer community [merged most of the git repositories into a single one](https://gstreamer.freedesktop.org/documentation/frequently-asked-questions/mono-repository.html?gi-language=c). The build system referred in this post as "gst-build" is now in the root of this [combined/mono repository](https://gitlab.freedesktop.org/gstreamer/gstreamer/).
+
 
 ## How to add a new log in GStreamer using gst-build
 
 
 ### The State of the Art:
+
+
 
 GStreamer relies on multiple repositories such as base and good to build its ecosystem, and now owns more than 30 projects in Gitlab. So, a unified tool/build system has always been necessary to build a specified version.
 
