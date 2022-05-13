@@ -4,6 +4,10 @@ title: "Generate a minimal GStreamer build, tailored to your needs"
 date: 2021-10-04
 ---
 
+> **UPDATE**: gst-build is now at the root of the main GStreamer git repository
+In September 2021, the GStreamer community [merged most of the git repositories into a single one](https://gstreamer.freedesktop.org/documentation/frequently-asked-questions/mono-repository.html?gi-language=c). The build system referred in this post as "gst-build" is now in the root of this [combined/mono repository](https://gitlab.freedesktop.org/gstreamer/gstreamer/).
+
+
 GStreamer is a powerful multimedia framework with over 30 libraries and more than 1600 elements in 230 plugins providing a wide variety of functionality. This makes it possible to build a huge variety of applications, however it also makes it tricky to ship in a constrained device. Luckily, most applications only use a subset of this functionality, and up until now there wasn't an easy way to generate a build with just enough GStreamer for a specific application.
 
 Thanks to a partnership with Huawei, you can now use [gst-build] to generate a minimal GStreamer build, tailored to a specific application, or set of applications. In this blog post, we'll look at the major changes that have been introduced in GStreamer to make this possible, and provide a small example of what can be achieved with minimal, custom builds.

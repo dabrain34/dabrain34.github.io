@@ -1,9 +1,13 @@
 ---
 layout: post
-title: "Cross-compiling with gst-build"
+title: "Cross-compiling with GStreamer"
 date: 2020-05-18
 canonical_url: "https://www.collabora.com/news-and-blog/blog/2020/05/15/cross-compiling-with-gst-build-and-gstreamer/"
 ---
+
+
+> **UPDATE**: gst-build is now at the root of the main GStreamer git repository
+In September 2021, the GStreamer community [merged most of the git repositories into a single one](https://gstreamer.freedesktop.org/documentation/frequently-asked-questions/mono-repository.html?gi-language=c). The build system referred in this post as "gst-build" is now in the root of this [combined/mono repository](https://gitlab.freedesktop.org/gstreamer/gstreamer/).
 
 
 ## Cross-compiling with gst-build
