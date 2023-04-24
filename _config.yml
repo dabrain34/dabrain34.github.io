@@ -1,7 +1,7 @@
 #remote_theme: thelehhman/texture
 theme: texture
 texture:
-  title: Stéphane Cerveau's weblog
+  title: dabrain34's blog
   tagline: Free Software Enthousiast - Consultant @ Igalia
   date_format: "%b %-d, %Y"
 
