@@ -1,13 +1,8 @@
 ---
+layout: post
 title: "ESExtractor: how to integrate a dependency-free library to the Khronos CTS"
-description: "How to integrate a dependency-free library to the Khronos CTS"
 date: 2023-04-19
-tags:
-  - ESExtractor
-  - Vulkan Video
-  - H26x
-  - Khronos CTS
-permalink: "/{{ title | slugify }}/"
+canonical_url: "https://blogs.igalia.com/scerveau/esextractor-how-to-integrate-a-dependency-free-library-to-the-khronos-cts/"
 ---
 
 # ESExtractor, how to integrate a dependency-free library to the Khronos CTS
