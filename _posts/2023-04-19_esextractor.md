@@ -1,4 +1,16 @@
-# ESExtractor: how to integrate a dependency-free library to the Khronos CTS
+---
+title: "ESExtractor: how to integrate a dependency-free library to the Khronos CTS"
+description: "How to integrate a dependency-free library to the Khronos CTS"
+date: 2023-04-19
+tags:
+  - ESExtractor
+  - Vulkan Video
+  - H26x
+  - Khronos CTS
+permalink: "/{{ title | slugify }}/"
+---
+
+# ESExtractor, how to integrate a dependency-free library to the Khronos CTS
 
 Since the [Vulkan CTS](https://github.com/KhronosGroup/VK-GL-CTS) is now able to test and check [Vulkan Video support](https://www.khronos.org/news/press/vulkan-sdk-is-vulkan-video-ready)
  including video decoding, it was necessary to define the kind of media container to be used inside the test cases and the library
@@ -13,13 +25,13 @@ so first all the videos were converted to the elementary stream format for
 H264 and H265 contents.
 This is a very elementary format based on MPEG start codes and NAL unit identification.
 
-As FFMpeg is quite heavy, monolothic package and might cause issues to support multiple platforms and architectures,
-a first attempt to replace it was to use GStreamer and its helper library, [demuxeres](https://github.com/Igalia/GstVkVideoParser/tree/main/lib/demuxeres)
-It was a smaller package but needed to be a binary packaged to avoid the glib/gstreamer system dependencies.
-it was a no-go because the binary package would be awkward to support on the various platforms targetted by the CTS
+To avoid an extra multimedia solution integrable only with binaries, a first attempt to replace FFmpeg was,
+ to use GStreamer and an in-house helper library called [demuxeres](https://github.com/Igalia/GstVkVideoParser/tree/main/lib/demuxeres).
+It was smaller but needed to be a binary still to avoid the glib/gstreamer system dependencies (self contained library).
+it was a no-go still because the binary package would be awkward to support on the various platforms targetted by the the Khronos CTS.
 
-So at [Igalia](https://www.igalia.com/), we decided to implement a dependency-free, custom library, written in C++
- to be compliant with the CTS and simple to integrate into any build system.
+So at [Igalia](https://www.igalia.com/), we decided to implement a minimal, dependency-free, custom library, written in C++
+ to be compliant with the Khronos CTS and simple to integrate into any build system.
 
 This library is called [ESExtractor](https://github.com/Igalia/ESExtractor)
 
