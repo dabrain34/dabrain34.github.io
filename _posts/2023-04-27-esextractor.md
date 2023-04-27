@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "ESExtractor: how to integrate a dependency-free library to the Khronos CTS"
-date: 2023-04-19
-canonical_url: "https://blogs.igalia.com/scerveau/esextractor-how-to-integrate-a-dependency-free-library-to-the-khronos-cts/"
+title:  "ESExtractor: how to integrate a dependency-free library to the Khronos CTS"
+date:   2023-04-27 12:10:45 +0200
+categories: jekyll update
 ---
-
 # ESExtractor, how to integrate a dependency-free library to the Khronos CTS
 
 Since the [Vulkan CTS](https://github.com/KhronosGroup/VK-GL-CTS) is now able to test and check [Vulkan Video support](https://www.khronos.org/news/press/vulkan-sdk-is-vulkan-video-ready)
@@ -83,3 +82,4 @@ The [CI](https://github.com/Igalia/ESExtractor/actions) is now configured to rel
 
 
 As usual, if you would like to learn more about Vulkan Video, ESExtractor or any other open multimedia framework, please contact [us](https://www.igalia.com/)!
+
