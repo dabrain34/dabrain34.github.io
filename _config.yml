@@ -11,6 +11,9 @@ texture:
     gitlab: dabrain34
   style: blue
   showNav: true
+  navigation:
+  - title: Me, myself and I
+    url: "/about"
 
 plugins:
   - jekyll-seo-tag
